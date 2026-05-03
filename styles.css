@@ -67,6 +67,7 @@ body {
 .header-logo {
   height: clamp(28px, 3.5vw, 44px);
   width: auto;
+  max-width: 100%;
   display: block;
 }
 
