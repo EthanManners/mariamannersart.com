@@ -165,7 +165,7 @@ nav a:hover {
   max-width: 860px;
   display: flex;
   gap: 48px;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 
 .profile-photo {
