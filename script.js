@@ -4,20 +4,20 @@
 
 const IMAGES = [
   { src: 'portfolio/ILL670 -M2-Color.jpg',                       alt: 'ILL670 — Module 2' },
-  { src: 'portfolio/ILL670 -M3-Color.jpg',                       alt: 'ILL670 — Module 3' },
+  { src: 'portfolio/A6_1_Manners_type-only.jpg',                 alt: 'Type Only' },
   { src: 'portfolio/ILL670-M7 7_1  Midterm.jpg',                 alt: 'ILL670 — Midterm' },
+  { src: 'portfolio/ILL670 -M3-Color.jpg',                       alt: 'ILL670 — Module 3' },
   { src: 'portfolio/A9_1_Manners_ArticPuppies.jpg',              alt: 'Arctic Puppies' },
   { src: 'portfolio/A9_1_Manners_baby-kid-teen_2.jpg',           alt: 'Baby · Kid · Teen' },
   { src: 'portfolio/A10_1_Manners_adult page 1.jpg',             alt: 'Adult — Page 1' },
   { src: 'portfolio/A10_1_Manners_adult page 2.jpg',             alt: 'Adult — Page 2' },
   { src: 'portfolio/A11_1_Manners_Collection_1.jpg',             alt: 'Collection 1' },
   { src: 'portfolio/A11_1_Manners_Mock_Ups.jpg',                 alt: 'Mock Ups' },
+  { src: 'portfolio/A8_1_Maria_Manners_patterns&mock ups.jpg',   alt: 'Patterns & Mock Ups' },
   { src: 'portfolio/A5_1_Manners_Pattern_1.jpg',                 alt: 'Pattern 1' },
   { src: 'portfolio/A5_1_Manners_Pattern_2.jpg',                 alt: 'Pattern 2' },
   { src: 'portfolio/A5_1_Manners_Pattern_3.jpg',                 alt: 'Pattern 3' },
   { src: 'portfolio/A5_1_Manners_Pattern_4.jpg',                 alt: 'Pattern 4' },
-  { src: 'portfolio/A6_1_Manners_type-only.jpg',                 alt: 'Type Only' },
-  { src: 'portfolio/A8_1_Maria_Manners_patterns&mock ups.jpg',   alt: 'Patterns & Mock Ups' },
 ];
 
 

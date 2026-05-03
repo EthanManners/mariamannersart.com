@@ -60,16 +60,14 @@ body {
 .header-identity {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1px;
 }
 
-.header-name {
-  font-family: var(--font-serif);
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-  color: var(--text);
+.header-logo {
+  height: clamp(28px, 3.5vw, 44px);
+  width: auto;
+  display: block;
 }
 
 .header-subtitle {
@@ -107,22 +105,23 @@ nav a:hover {
 #gallery-grid {
   max-width: var(--max-w);
   margin: 0 auto;
-  columns: 3 280px;
-  column-gap: var(--gap);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
 }
 
 .gallery-item {
-  break-inside: avoid;
-  margin-bottom: var(--gap);
   overflow: hidden;
   cursor: zoom-in;
   background: var(--border);
+  aspect-ratio: 3 / 4;
 }
 
 .gallery-item img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   transition: opacity 0.3s ease, transform 0.35s ease;
   opacity: 0;
 }
@@ -326,12 +325,8 @@ footer p {
   }
 
   #gallery-grid {
-    columns: 2 160px;
-    column-gap: 10px;
-  }
-
-  .gallery-item {
-    margin-bottom: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
   #about,
@@ -345,6 +340,6 @@ footer p {
 
 @media (max-width: 400px) {
   #gallery-grid {
-    columns: 1;
+    grid-template-columns: 1fr;
   }
 }
