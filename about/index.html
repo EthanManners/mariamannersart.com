@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Maria Manners — Artist & Illustrator based in Austin, Texas.">
+  <title>About — Maria Manners</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="header-identity">
+        <a href="../"><img src="../MMArt Logo for Web3.png" alt="Maria Manners" class="header-logo"></a>
+        <span class="header-subtitle">Artist &amp; Illustrator</span>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="../#work">Work</a>
+        <a href="../about/">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── About ── -->
+    <section id="about">
+      <div class="section-inner about-layout">
+        <img src="../Profile.jpg" alt="Maria Manners" class="profile-photo">
+        <div class="about-text">
+          <h2>About</h2>
+          <p>My name is Maria Manners, and I am a versatile artist and illustrator with a background in Architecture. I hold Master's degrees in both Visual Development and Illustration from the Academy of Art University in San Francisco.</p>
+          <p>Based in my studio in Austin, Texas, I specialize in creating characters, environments, and props. I also illustrate stories and surface collections using both traditional and digital mediums.</p>
+          <p>Please feel free to contact me to discuss your potential project.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact ── -->
+    <section id="contact">
+      <div class="section-inner">
+        <h2>Contact</h2>
+        <p>Available for commissions, collaborations, and creative projects.</p>
+        <a class="contact-link" href="mailto:maria.manners@mariamannersart.com">maria.manners@mariamannersart.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <p>&copy; Maria Manners | Created by ethanmanners.com <span id="footer-year"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
