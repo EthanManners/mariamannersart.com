@@ -1,23 +1,25 @@
-// ── Portfolio Images ──────────────────────────────────────────────────────────
-// Add or remove entries here as your portfolio grows.
-// Files live in the ./portfolio/ directory.
+// ── Portfolio (DISPLAY ONLY) ────────────────────────────────────────────────
+// Digital / illustration work for the standalone /portfolio/ page.
+// This is a display-only data source — it has NO commerce fields and must never
+// be merged with the PAINTINGS shop data. Image files live alongside this page
+// in the ./portfolio/ directory, so paths here are bare filenames.
 
-const IMAGES = [
-  { src: 'portfolio/ILL670 -M2-Color.jpg',                       alt: 'ILL670 — Module 2' },
-  { src: 'portfolio/A6_1_Manners_type-only.jpg',                 alt: 'Type Only' },
-  { src: 'portfolio/ILL670-M7 7_1  Midterm.jpg',                 alt: 'ILL670 — Midterm' },
-  { src: 'portfolio/ILL670 -M3-Color.jpg',                       alt: 'ILL670 — Module 3' },
-  { src: 'portfolio/A9_1_Manners_ArticPuppies.jpg',              alt: 'Arctic Puppies' },
-  { src: 'portfolio/A9_1_Manners_baby-kid-teen_2.jpg',           alt: 'Baby · Kid · Teen' },
-  { src: 'portfolio/A10_1_Manners_adult page 1.jpg',             alt: 'Adult — Page 1' },
-  { src: 'portfolio/A10_1_Manners_adult page 2.jpg',             alt: 'Adult — Page 2' },
-  { src: 'portfolio/A11_1_Manners_Collection_1.jpg',             alt: 'Collection 1' },
-  { src: 'portfolio/A11_1_Manners_Mock_Ups.jpg',                 alt: 'Mock Ups' },
-  { src: 'portfolio/A8_1_Maria_Manners_patterns&mock ups.jpg',   alt: 'Patterns & Mock Ups' },
-  { src: 'portfolio/A5_1_Manners_Pattern_1.jpg',                 alt: 'Pattern 1' },
-  { src: 'portfolio/A5_1_Manners_Pattern_2.jpg',                 alt: 'Pattern 2' },
-  { src: 'portfolio/A5_1_Manners_Pattern_3.jpg',                 alt: 'Pattern 3' },
-  { src: 'portfolio/A5_1_Manners_Pattern_4.jpg',                 alt: 'Pattern 4' },
+const PORTFOLIO = [
+  { src: 'ILL670 -M2-Color.jpg',                      alt: 'ILL670 — Module 2' },
+  { src: 'A6_1_Manners_type-only.jpg',                alt: 'Type Only' },
+  { src: 'ILL670-M7 7_1  Midterm.jpg',                alt: 'ILL670 — Midterm' },
+  { src: 'ILL670 -M3-Color.jpg',                      alt: 'ILL670 — Module 3' },
+  { src: 'A9_1_Manners_ArticPuppies.jpg',             alt: 'Arctic Puppies' },
+  { src: 'A9_1_Manners_baby-kid-teen_2.jpg',          alt: 'Baby · Kid · Teen' },
+  { src: 'A10_1_Manners_adult page 1.jpg',            alt: 'Adult — Page 1' },
+  { src: 'A10_1_Manners_adult page 2.jpg',            alt: 'Adult — Page 2' },
+  { src: 'A11_1_Manners_Collection_1.jpg',            alt: 'Collection 1' },
+  { src: 'A11_1_Manners_Mock_Ups.jpg',                alt: 'Mock Ups' },
+  { src: 'A8_1_Maria_Manners_patterns&mock ups.jpg',  alt: 'Patterns & Mock Ups' },
+  { src: 'A5_1_Manners_Pattern_1.jpg',                alt: 'Pattern 1' },
+  { src: 'A5_1_Manners_Pattern_2.jpg',                alt: 'Pattern 2' },
+  { src: 'A5_1_Manners_Pattern_3.jpg',                alt: 'Pattern 3' },
+  { src: 'A5_1_Manners_Pattern_4.jpg',                alt: 'Pattern 4' },
 ];
 
 
@@ -26,12 +28,12 @@ const IMAGES = [
 function renderGallery() {
   const grid = document.getElementById('gallery-grid');
 
-  if (IMAGES.length === 0) {
-    grid.innerHTML = '<p class="gallery-empty">Add images to the <code>portfolio/</code> directory and list them in the <code>IMAGES</code> array in <code>script.js</code>.</p>';
+  if (PORTFOLIO.length === 0) {
+    grid.innerHTML = '<p class="gallery-empty">Add images to the <code>portfolio/</code> directory and list them in the <code>PORTFOLIO</code> array in <code>portfolio.js</code>.</p>';
     return;
   }
 
-  IMAGES.forEach((image, index) => {
+  PORTFOLIO.forEach((image, index) => {
     const item = document.createElement('div');
     item.className = 'gallery-item';
     item.setAttribute('role', 'button');
@@ -89,7 +91,7 @@ function closeLightbox() {
 }
 
 function updateLightboxImage() {
-  const { src, alt } = IMAGES[currentIndex];
+  const { src, alt } = PORTFOLIO[currentIndex];
 
   // Swap image with a brief fade
   lbImg.style.opacity = '0';
@@ -99,7 +101,7 @@ function updateLightboxImage() {
   lbImg.style.transition = 'opacity 0.18s ease';
 
   lbPrev.disabled = currentIndex === 0;
-  lbNext.disabled = currentIndex === IMAGES.length - 1;
+  lbNext.disabled = currentIndex === PORTFOLIO.length - 1;
 }
 
 function prevImage() {
@@ -110,7 +112,7 @@ function prevImage() {
 }
 
 function nextImage() {
-  if (currentIndex < IMAGES.length - 1) {
+  if (currentIndex < PORTFOLIO.length - 1) {
     currentIndex++;
     updateLightboxImage();
   }

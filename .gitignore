@@ -1,2 +1,6 @@
-portfolio/
+public/portfolio/*
+!public/portfolio/index.html
 script.js.bk
+script.js.bk2
+.env
+server/.env

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Original paintings by Maria Manners — artist & illustrator based in Austin, Texas. Shop available originals.">
+  <title>Maria Manners — Original Paintings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="header-identity">
+        <a href="."><img src="MMArt Logo for Web3.png" alt="Maria Manners" class="header-logo"></a>
+        <span class="header-subtitle">Artist &amp; Illustrator</span>
+      </div>
+      <div class="header-right">
+        <nav aria-label="Primary navigation">
+          <a href=".">Shop</a>
+          <a href="portfolio/">Portfolio</a>
+          <a href="about/">About</a>
+          <a href="about/#contact">Contact</a>
+        </nav>
+        <button type="button" class="header-cart" id="cart-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <path d="M6 7h12l-1 12H7L6 7z" stroke-linejoin="round"/>
+            <path d="M9 7a3 3 0 0 1 6 0" stroke-linecap="round"/>
+          </svg>
+          <span id="cart-count" class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── Email opt-in (inline, not a popup) ── -->
+    <section class="email-optin" aria-label="Newsletter signup">
+      <form id="optin-form" class="optin-inner">
+        <span class="optin-line">First look at new originals</span>
+        <input id="optin-email" class="optin-input" type="email" required placeholder="you@email.com" aria-label="Email address">
+        <button type="submit" class="optin-btn">Notify me</button>
+        <p class="optin-note" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- ── Shop feed ── -->
+    <section id="shop" aria-label="Original paintings for sale">
+      <div id="shop-feed" class="shop-feed"></div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <p>&copy; Maria Manners | Created by ethanmanners.com <span id="footer-year"></span></p>
+  </footer>
+
+  <!-- ── Cart drawer (slide-in) ── -->
+  <div id="cart-drawer" class="cart-drawer" hidden aria-hidden="true">
+    <div class="cart-backdrop" data-cart-close></div>
+    <aside class="cart-panel" role="dialog" aria-modal="true" aria-label="Shopping cart">
+      <div class="cart-head">
+        <h2 class="cart-title">Your cart</h2>
+        <button class="cart-close" type="button" data-cart-close aria-label="Close cart">&times;</button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-foot">
+        <div class="cart-total-row"><span>Total</span><span id="cart-total">$0</span></div>
+        <button class="btn btn-buy cart-checkout" id="cart-checkout" type="button">Checkout</button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ── Checkout modal (Stripe Payment Element) ── -->
+  <div id="checkout-modal" class="checkout-modal" hidden aria-hidden="true">
+    <div class="checkout-backdrop" data-checkout-close></div>
+    <div class="checkout-dialog" role="dialog" aria-modal="true" aria-label="Checkout">
+      <button class="checkout-close" type="button" data-checkout-close aria-label="Close checkout">&times;</button>
+      <h2 class="checkout-title">Checkout</h2>
+      <div class="checkout-summary" id="checkout-summary"></div>
+      <p class="checkout-shipnote">Complimentary insured shipping &middot; Ships within the US</p>
+      <div id="checkout-loading" class="checkout-loading">Preparing secure checkout…</div>
+      <form id="payment-form" class="checkout-form" style="display:none">
+        <div class="checkout-field">
+          <label class="checkout-label" for="checkout-email">Email</label>
+          <input id="checkout-email" class="checkout-input" type="email" inputmode="email"
+                 autocomplete="email" placeholder="you@email.com" aria-label="Email address" required>
+        </div>
+        <div class="checkout-field">
+          <span class="checkout-label">Shipping address</span>
+          <div id="address-element"><!-- Stripe Address Element mounts here --></div>
+        </div>
+        <div class="checkout-field">
+          <span class="checkout-label">Payment</span>
+          <div id="payment-element"><!-- Stripe Payment Element mounts here --></div>
+        </div>
+        <button id="pay-button" class="btn btn-buy checkout-pay" type="submit" disabled>
+          <span id="pay-button-text">Pay</span>
+        </button>
+        <p id="checkout-error" class="checkout-error" role="alert"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Stripe.js + commerce scripts — shop page ONLY -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="cart.js"></script>
+  <script src="checkout.js"></script>
+  <script src="shop.js"></script>
+</body>
+</html>

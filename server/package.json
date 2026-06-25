@@ -1,0 +1,15 @@
+{
+  "name": "momweb-server",
+  "version": "0.1.0",
+  "description": "Backend payment service for Maria Manners art portfolio. Only component that touches the Stripe secret key.",
+  "type": "commonjs",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --env-file=.env server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "stripe": "^16.8.0"
+  }
+}
