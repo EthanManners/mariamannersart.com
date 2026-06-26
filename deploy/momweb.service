@@ -1,0 +1,24 @@
+# systemd unit for the Maria Manners shop (Node payment service + static site).
+# Install:
+#   sudo cp deploy/momweb.service /etc/systemd/system/momweb.service
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now momweb
+# Adjust WorkingDirectory / EnvironmentFile if the repo lives elsewhere.
+
+[Unit]
+Description=Maria Manners shop - Node payment service + site
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/mariamannersart/server
+EnvironmentFile=/var/www/mariamannersart/server/.env
+ExecStart=/usr/bin/node server.js
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

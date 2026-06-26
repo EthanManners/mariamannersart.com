@@ -33,6 +33,9 @@ const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 const STRIPE_PUBLISHABLE_KEY = process.env.STRIPE_PUBLISHABLE_KEY;
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
 const PORT = process.env.PORT || 8787;
+// Bind address. Default 0.0.0.0; set HOST=127.0.0.1 in production so the port is
+// only reachable via the local reverse proxy (nginx), never the public internet.
+const HOST = process.env.HOST || "0.0.0.0";
 
 if (!STRIPE_SECRET_KEY) {
   console.error(
@@ -186,8 +189,8 @@ app.post("/api/webhook", express.raw({ type: "application/json" }), (req, res) =
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Payment service + site listening on port ${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Payment service + site listening on ${HOST}:${PORT}`);
 });
 
 // Single fulfillment hook for a confirmed sale. Marks each piece sold (so it
